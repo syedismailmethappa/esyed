@@ -1,0 +1,31 @@
+I want you to generate a complete, production-ready e-commerce web application using Django (Python) + Django REST Framework for the backend and Next.js (React) for the frontend. Follow these requirements precisely:
+
+Architecture & main features
+	•	Backend: Django 4.x + Django REST Framework. Use PostgreSQL. Implement token-based auth using JWT (djangorestframework-simplejwt). Include role-based users: customer, seller, admin.
+	•	Frontend: Next.js (latest stable), React (functional components + hooks), TypeScript, client-side and server-side rendering where appropriate. Use Tailwind CSS for styling.
+	•	Micro-features: product catalog (with categories & tags), seller-managed product listings, shopping cart, checkout with Razorpay/Stripe integration (mockable), orders, order tracking, ratings & reviews, wishlist, search with filters, product images (support multiple), inventory management, pagination, and price history (simple).
+	•	Extra: product search by image (placeholder API), email notifications (Django email backend / console), simple analytics endpoint (top selling products).
+
+Code quality & tooling
+	•	Provide a Dockerfile for backend and frontend, plus docker-compose to run Postgres, Redis, Django, Next.js.
+	•	Include unit tests: Django pytest or built-in tests for key models + DRF API tests; React testing with React Testing Library for major components.
+	•	Linting & formatting: Prettier (frontend), ESLint (frontend), black & isort (backend).
+	•	CI: GitHub Actions config that runs backend tests and frontend build/test on push & PR.
+
+Deliverables
+	•	Fully scaffolded repository split into /backend and /frontend.
+	•	A README with run instructions, environment variables, and deployment notes.
+	•	Provide example .env.example for both services.
+	•	Provide API documentation (OpenAPI/Swagger) for the backend.
+	•	Provide sample seed script to create demo users (admin, seller, customer) and 20 sample products.
+
+Security & best practices
+	•	Never commit secrets. Use environment variables.
+	•	Use pagination on list endpoints. Validate all inputs. Rate limit auth endpoints.
+
+When generating code
+	•	Show Dockerfile, docker-compose.yml, pyproject/requirements.txt or requirements.txt, package.json and key source files for both services.
+	•	For long files, provide the full file content.
+	•	After code generation, produce a short checklist of next manual steps (e.g., configure Razorpay keys, enable email service).
+
+Start by scaffolding the project structure and then implement core backend models & endpoints (User, Product, Category, Order, Cart). After the backend API is ready, scaffold the Next.js frontend with pages for product listing, product detail, cart, checkout, seller dashboard, and basic styling. Include example tests and CI configs.
